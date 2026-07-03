@@ -1,0 +1,27 @@
+# Hybrid Hallucination Detection System — Requirements
+# ======================================================
+#
+# Install everything with:
+#   pip install -r requirements.txt
+
+# ── Core (required to run the detector) ─────────────────────────────
+wikipedia-api>=0.6.0            # Wikipedia retrieval (import name: wikipediaapi)
+wikipedia>=1.4.0                # Wikipedia search fallback (import name: wikipedia)
+scikit-learn>=1.3.0             # TF-IDF retrieval/semantic similarity fallback
+sentence-transformers>=2.2.0    # SBERT semantic similarity
+
+# Confidence scoring
+transformers>=4.30.0            # HuggingFace models
+torch>=2.0.0                    # PyTorch (required for transformers)
+
+# ── Needed for evaluation scripts (scripts/) ─────────────────────────
+pandas>=2.0.0                   # scripts/evaluate_truthfulqa.py (reads TruthfulQA.csv)
+datasets>=2.14.0                # scripts/download_vitaminc.py (HuggingFace datasets)
+
+# ── Optional: faster transformers inference ──────────────────────────
+# accelerate>=0.20.0
+# bitsandbytes>=0.39.0          # 8-bit quantization for large models
+
+# ── Optional: for Jupyter notebook usage ──────────────────────────────
+# jupyter>=1.0.0
+# matplotlib>=3.7.0
